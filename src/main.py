@@ -6,6 +6,7 @@ repository_name = "newversion"
 
 # Set the GitHub API URL
 api_url = f"https://api.github.com/repos/{repository_owner}/{repository_name}/releases/latest"
+print(api_url)
 
 # Make a GET request to the GitHub API
 response = requests.get(api_url)
@@ -16,7 +17,7 @@ if response.status_code == 200:
     release_info = response.json()
 
     # Extract the latest version tag
-    latest_version = release_info['v1.0.0']
+    latest_version = release_info['v1.1.0']
 
     # Check if the latest version is different from the current version
     # You can implement a check against the current installed version here
